@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+
+/* font-family: "Tektur", sans-serif; */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Tektur", sans-serif;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 70px; /* espaço para o menu fixo */
+  scroll-behavior: smooth;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* 🔝 Navbar fixa */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #004080;
+  padding: 12px 20px;
+  z-index: 1000;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+}
+
+.navbar a.active {
+  background: #ffd700;
+  color: #004080;
+  font-weight: bold;
+}
+
+/* Botão dark mode */
+#darkModeToggle {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.3s;
+}
+
+#darkModeToggle:hover {
+  transform: rotate(20deg);
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: #004080;
+}
+
+header .subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+/* Conteúdo */
+#container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+  /* 🔥 sempre visível por padrão */
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease-out;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  color: #004080;
+}
+
+ul {
+  margin: 10px 0 0 20px;
+}
+
+figure {
+  margin: 15px 0;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+footer {
+  background: #222;
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-left {
+  margin-bottom: 10px;
+}
+
+.footer-right a {
+  margin-left: 20px;
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-right a:hover {
+  color: #fff;
+}
+
+/* 🔝 Botão voltar ao topo */
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #004080;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+#backToTop:hover {
+  background: #ffd700;
+  color: #004080;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 🌙 Dark Mode */
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark header h1 {
+  color: #ffd700;
+}
+
+body.dark .card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .navbar {
+  background: #222;
+}
+
+body.dark .navbar a.active {
+  background: #ffd700;
+  color: #222;
+}
+
+body.dark figcaption {
+  color: #bbb;
+}
+
+body.dark footer {
+  color: #aaa;
+}
+@media screen and (max-width: 800px) {
+  .navbar {
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .navbar ul {
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-right a {
+    margin: 10px;
+  }
+  
+}
