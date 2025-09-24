@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
 
 /* font-family: "Tektur", sans-serif; */
 
@@ -163,14 +163,28 @@ footer {
   margin-bottom: 10px;
 }
 
+.footer-right a:hover {
+  color: #fff;
+}
 .footer-right a {
   margin-left: 20px;
   color: #ccc;
   text-decoration: none;
   transition: color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
 }
 
-.footer-right a:hover {
+.footer-right a i {
+  font-size: 1.1rem;
+}
+#copyright {
+  text-decoration: none;
+  color: #ccc;
+}
+#copyright:hover {
   color: #fff;
 }
 
@@ -257,5 +271,4 @@ body.dark footer {
   .footer-right a {
     margin: 10px;
   }
-  
 }
