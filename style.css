@@ -145,6 +145,61 @@ figcaption {
   margin-top: 5px;
 }
 
+.suggestion {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.suggestion h2 {
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+.suggestion-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+}
+
+.suggestion-card img {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.suggestion-card h3 {
+  margin-bottom: 10px;
+}
+
+.btn-suggest {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #004080;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-suggest:hover {
+  background: #ffd700;
+  color: #004080;
+}
+
+/* Dark mode */
+body.dark .suggestion-card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+
 footer {
   background: #222;
   color: #ccc;
